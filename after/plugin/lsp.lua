@@ -35,3 +35,6 @@ cmp.setup({
         ['<C-j>'] = cmp.mapping.scroll_docs(4),
     })
 })
+
+local venvSelector = require("venv-selector")
+venvSelector.setup()

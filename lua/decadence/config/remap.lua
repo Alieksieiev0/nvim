@@ -41,9 +41,6 @@ keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
 end)
 
-keymap.set("n", "<leader>nd", function() require("noice").cmd("dismiss") end)
-keymap.set("n", "<leader>nh", function() require("noice").cmd("history") end)
-
 
 keymap.set("n", "<leader>pr", function() 
     vim.cmd("ProjectRoot")
