@@ -21,7 +21,6 @@ require('mason-lspconfig').setup({
                             unusedparams = true
                         },
                         staticcheck = true,
-                        gofumpt = true
                     }
                 }
             })

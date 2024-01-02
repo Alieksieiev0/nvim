@@ -11,7 +11,6 @@ opt.shiftwidth = 4
 opt.expandtab = true
 opt.smartindent = true
 
-opt.termguicolors = true
 opt.wrap = false
 opt.swapfile = false
 opt.backup = false
@@ -19,3 +18,8 @@ opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 opt.undofile = true
 opt.hlsearch = false
 opt.incsearch = true
+
+opt.scrolloff = 8
+opt.signcolumn = "yes"
+
+opt.colorcolumn = "80"

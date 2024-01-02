@@ -15,4 +15,8 @@ return {
     { 'olexsmir/gopher.nvim' },
     { 'mfussenegger/nvim-lint' },
     { 'windwp/nvim-ts-autotag' },
+    {
+        'stevearc/conform.nvim',
+        opts = {},
+    }
 }

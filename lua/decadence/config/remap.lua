@@ -13,20 +13,25 @@ keymap.set("n", "N", "Nzzzv")
 keymap.set("x", "<leader>p", [["_dP]])
 
 --ext greatest remap ever : asbjornHaland
-keymap.set({"n", "v"}, "<leader>y", [["+y]])
+keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 keymap.set("n", "<leader>Y", [["+Y]])
 
-keymap.set({"n", "v"}, "<leader>d", [["_d]])
+keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 keymap.set("n", "Q", "<nop>")
 keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
-keymap.set("n", "<leader>f", function() 
-    vim.lsp.buf.format({ async = false })
-    vim.cmd("silent !golines . -w")
+keymap.set("n", "<leader>f", function()
+    require("conform").format({ async = false })
 end
 )
+keymap.set("n", "<leader>qf", function()
+    vim.lsp.buf.code_action({
+        apply = true
+    })
+end)
+
 keymap.set("n", "<leader>l", function() require("lint").try_lint() end)
-keymap.set("n", "<leader>gr", "<cmd>!go run .<CR>")
+keymap.set("n", "<leader>gr", "<cmd>!go run %<CR>")
 
 keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
 keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
@@ -42,6 +47,6 @@ keymap.set("n", "<leader><leader>", function()
 end)
 
 
-keymap.set("n", "<leader>pr", function() 
+keymap.set("n", "<leader>pr", function()
     vim.cmd("ProjectRoot")
 end)
