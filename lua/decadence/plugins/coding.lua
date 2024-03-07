@@ -18,5 +18,6 @@ return {
     {
         'stevearc/conform.nvim',
         opts = {},
-    }
+    },
+    { 'tpope/vim-fugitive' }
 }
