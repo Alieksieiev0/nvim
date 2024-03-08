@@ -12,6 +12,8 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
+
+vim.g.mapleader = " "
 require("lazy").setup(
-    { import = "decadence.plugins" }
+    { import = "decadence.lazy" }
 )

@@ -1,4 +1,4 @@
-function ColorMyPencils(color)
+function ApplyColor()
     color = color or "tokyonight"
     vim.o.termguicolors = true
     vim.cmd.colorscheme(color)
@@ -7,4 +7,4 @@ function ColorMyPencils(color)
     vim.api.nvim_set_hl(1, "NormalFloat", { bg = "none" })
 end
 
-ColorMyPencils()
+ApplyColor()
