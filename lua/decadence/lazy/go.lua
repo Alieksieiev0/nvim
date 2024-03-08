@@ -5,9 +5,17 @@ return {
     },
     config = function()
         require("go").setup({
-            lsp_cfg = false,
-            lsp_on_attach = false
+            tag_options = '',
+            run_in_floaterm = true
         })
+        vim.keymap.set('n', '<leader>gj', function() vim.cmd.GoAddTag() end)
+        vim.keymap.set('n', '<leader>gta', function() vim.cmd.GoTest("-v") end)
+        vim.keymap.set('n', '<leader>gtf', function() vim.cmd.GoTestFile("-v") end)
+        vim.keymap.set('n', '<leader>gtn', function() vim.cmd.GoAddTest() end)
+        vim.keymap.set('n', '<leader>gts', function() vim.cmd("GoAlt!") end)
+        vim.keymap.set('n', '<leader>gtv', function() vim.cmd("GoAltV!") end)
+        vim.keymap.set('n', '<leader>ge', function() vim.cmd.GoIfErr() end)
+        vim.keymap.set('n', '<leader>gi', function() vim.cmd.GoToggleInlay() end)
     end,
     event = { "CmdlineEnter" },
     ft = { "go", 'gomod' },
