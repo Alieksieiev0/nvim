@@ -11,11 +11,12 @@ return {
         vim.keymap.set('n', '<leader>gj', function() vim.cmd.GoAddTag() end)
         vim.keymap.set('n', '<leader>gta', function() vim.cmd.GoTest("-v") end)
         vim.keymap.set('n', '<leader>gtf', function() vim.cmd.GoTestFile("-v") end)
-        vim.keymap.set('n', '<leader>gtn', function() vim.cmd.GoAddTest() end)
+        vim.keymap.set('n', '<leader>gtc', function() vim.cmd.GoCoverage("./...") end)
+        vim.keymap.set('n', '<leader>gth', "<cmd>silent !go tool cover -html cover.cov -o cover.html<CR>")
+        vim.keymap.set('n', '<leader>gto', "<cmd>!xdg-open cover.html<CR>")
         vim.keymap.set('n', '<leader>gts', function() vim.cmd("GoAlt!") end)
         vim.keymap.set('n', '<leader>gtv', function() vim.cmd("GoAltV!") end)
         vim.keymap.set('n', '<leader>ge', function() vim.cmd.GoIfErr() end)
-        vim.keymap.set('n', '<leader>gi', function() vim.cmd.GoToggleInlay() end)
     end,
     event = { "CmdlineEnter" },
     ft = { "go", 'gomod' },

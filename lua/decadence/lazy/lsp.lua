@@ -51,13 +51,6 @@ return {
                                     unusedparams = true
                                 },
                                 staticcheck = true,
-                                hints = {
-                                    compositeLiteralFields = true,
-                                    compositeLiteralTypes = true,
-                                    functionTypeParameters = true,
-                                    parameterNames = true,
-                                    rangeVariableTypes = true
-                                }
                             }
                         },
                     }
