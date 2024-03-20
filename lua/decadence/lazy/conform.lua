@@ -5,6 +5,7 @@ return {
         require("conform").setup({
             formatters_by_ft = {
                 go = { "goimports", "gofumt", "golines", "gomodifytags" },
+                javascript = { { "prettierd", "prettier" } },
             },
             format_on_save = {
                 -- These options will be passed to conform.format()
