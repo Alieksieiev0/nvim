@@ -41,7 +41,7 @@ return {
                 function(server_name)
                     require("lspconfig")[server_name].setup {}
                 end,
-                ["gopls"] = function()
+                gopls = function()
                     local lspconfig = require("lspconfig")
                     lspconfig.gopls.setup {
                         settings = {
@@ -55,6 +55,19 @@ return {
                         },
                     }
                 end,
+                svelte = function()
+                    local lspconfig = require("lspconfig")
+                    lspconfig.svelte.setup {
+                        on_attach = function(client)
+                            vim.api.nvim_create_autocmd("BufWritePost", {
+                                pattern = { "*.js", "*.ts" },
+                                callback = function(ctx)
+                                    client.notify("$/onDidChangeTsOrJsFile", { uri = ctx.match })
+                                end,
+                            })
+                        end
+                    }
+                end
             }
         })
     end
