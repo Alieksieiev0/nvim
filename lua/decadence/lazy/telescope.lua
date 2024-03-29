@@ -10,7 +10,11 @@ return {
         vim.keymap.set('n', '<leader>tf', builtin.find_files)
         vim.keymap.set('n', '<leader>to', builtin.oldfiles)
         vim.keymap.set('n', '<leader>tg', builtin.live_grep)
+        vim.keymap.set('n', '<leader>tm', builtin.man_pages)
+        vim.keymap.set('n', '<leader>th', builtin.help_tags)
         vim.keymap.set('n', '<leader>tc', builtin.git_commits)
+        vim.keymap.set('n', '<leader>tb', builtin.git_branches)
+        vim.keymap.set('n', '<leader>ts', builtin.git_status)
         vim.keymap.set('n', '<leader>tn', function() vim.cmd.Telescope("noice") end)
         vim.keymap.set('n', '<leader>tp', ":lua require'telescope'.extensions.projects.projects{}<CR>")
     end

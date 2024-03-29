@@ -1,5 +1,4 @@
---[[
-local workspace_folder = "~/.local/share/eclipse/" .. vim.fn.fnamemodify(root_dir, ":p:h:t")
+local workspace_folder = "/home/dmitriy/.local/share/eclipse/" .. vim.fn.fnamemodify(root_dir, ":p:h:t")
 local config = {
     cmd = {
 
@@ -16,16 +15,15 @@ local config = {
         '--add-modules=ALL-SYSTEM',
         '--add-opens', 'java.base/java.util=ALL-UNNAMED',
         '--add-opens', 'java.base/java.lang=ALL-UNNAMED',
-        '-javaagent:~/.local/share/eclipse/lombok.jar',
+        '-javaagent:/home/dmitriy/.local/share/eclipse/lombok.jar',
 
         '-jar',
-        '~/Programming/personal/java/eclipse.jdt.ls/org.eclipse.jdt.ls.product/target/repository/plugins/org.eclipse.equinox.launcher_1.6.700.v20240213-1244.jar',
+        '/home/dmitriy/Lsp/org.eclipse.jdt.ls.product/target/repository/plugins/org.eclipse.equinox.launcher_1.6.700.v20240213-1244.jar',
         '-configuration',
-        '~/Programming/personal/java/eclipse.jdt.ls/org.eclipse.jdt.ls.product/target/repository/config_linux',
+        '/home/dmitriy/Lsp/org.eclipse.jdt.ls.product/target/repository/config_linux',
         '-data', workspace_folder,
 
     },
-    root_dir = vim.fs.dirname(vim.fs.find({ 'gradlew', '.git', 'mvnw' }, { upward = true })[1]),
+    root_dir = vim.fs.dirname(vim.fs.find({ 'build.gradle', 'gradlew', '.git', 'mvnw' }, { upward = true })[1]),
 }
 require('jdtls').start_or_attach(config)
-]]

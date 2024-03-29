@@ -1,3 +1,4 @@
+--[[
 return {
     'nvim-java/nvim-java',
     dependencies = {
@@ -23,3 +24,6 @@ return {
         require('lspconfig').jdtls.setup({})
     end
 }
+]]
+
+return {}

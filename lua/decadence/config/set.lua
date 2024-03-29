@@ -23,3 +23,4 @@ opt.scrolloff = 8
 opt.signcolumn = "yes"
 
 opt.colorcolumn = "80"
+opt.clipboard = "unnamedplus"
