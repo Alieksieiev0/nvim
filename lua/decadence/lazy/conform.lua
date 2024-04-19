@@ -6,10 +6,13 @@ return {
             formatters_by_ft = {
                 go = { "goimports", "gofumt", "golines", "gomodifytags" },
                 javascript = { { "prettierd", "prettier" } },
-                java = { "google-java-format" }
+                java = { "google-java-format" },
             },
             format_on_save = function(bufnr)
                 -- Disable with a global or buffer-local variable
+                if vim.bo.filetype == "templ" then
+                    return
+                end
                 if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
                     return
                 end
@@ -19,7 +22,7 @@ return {
                 ["google-java-format"] = {
                     command = "google-java-format",
                     prepend_args = { "--aosp" }
-                }
+                },
             }
         })
 

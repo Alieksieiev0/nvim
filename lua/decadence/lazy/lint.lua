@@ -3,7 +3,7 @@ return {
     config = function()
         require("lint").linters_by_ft = {
             go = { 'golangcilint' },
-            javascript = { 'eslint_d' },
+            javascript = { 'eslint' },
         }
         vim.keymap.set("n", "<leader>l", function() require("lint").try_lint() end)
     end
