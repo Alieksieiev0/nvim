@@ -1,5 +1,5 @@
 function ApplyColor()
-    color = color or "tokyonight"
+    color = color or "rose-pine"
     vim.o.termguicolors = true
     vim.cmd.colorscheme(color)
 

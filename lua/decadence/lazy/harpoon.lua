@@ -1,18 +1,14 @@
 return {
     'theprimeagen/harpoon',
     branch = "harpoon2",
-    opts = {
-        global_settings = {
-            tabline = true,
-            tabline_prefix = "   ",
-            tabline_suffix = "   ",
-        },
-    },
     config = function()
         local harpoon = require("harpoon")
 
         harpoon:setup()
-        require('harpoon-tabline').setup()
+        require('harpoon-tabline').setup({
+            use_editor_color_scheme = false,
+        })
+
 
         vim.keymap.set("n", "<leader>a", function() harpoon:list():append() end)
         vim.keymap.set("n", "<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)

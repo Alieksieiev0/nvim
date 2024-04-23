@@ -21,7 +21,8 @@ return {
 
         lualine.setup({
             options = {
-                theme = 'tokyonight',
+                --- @usage 'rose-pine' | 'rose-pine-alt'
+                theme = 'rose-pine',
                 globalstatus = true,
                 disabled_filetypes = { statusline = { "dashboard", "alpha", "starter" } },
             },

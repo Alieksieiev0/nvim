@@ -18,6 +18,7 @@ opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 opt.undofile = true
 opt.hlsearch = false
 opt.incsearch = true
+opt.termguicolors = true
 
 opt.scrolloff = 8
 opt.signcolumn = "yes"

@@ -1,4 +1,4 @@
 return {
     "jasonpanosso/harpoon-tabline.nvim",
-    dependencies = { "ThePrimeagen/harpoon" }
+    dependencies = { "ThePrimeagen/harpoon" },
 }
