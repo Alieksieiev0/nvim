@@ -91,32 +91,14 @@ return {
                         end
                     }
                 end,
-                [[--
                 sqls = function()
                     local lspconfig = require("lspconfig")
-
                     lspconfig.sqls.setup {
-                        settings = {
-                            sqls = {
-                                {
-                                    driver = 'postgresql',
-                                    dataSourceName = 'host=0.0.0.0 port=5433 user=dmitriy password=12356 dbname=notification-data sslmode=disable',
-                                },
-                                connections = {
-                                    {
-                                        driver = 'postgresql',
-                                        dataSourceName = 'host=0.0.0.0 port=5432 user=dmitriy password=12356 dbname=notification-data sslmode=disable',
-                                    },
-                                    {
-                                        driver = 'postgresql',
-                                        dataSourceName = 'host=0.0.0.0 port=5434 user=dmitriy password=12356 dbname=notification-data sslmode=disable',
-                                    },
-                                },
-                            },
-                        },
+                        on_attach = function(client, bufnr)
+                            require('sqls').on_attach(client, bufnr) -- require sqls.nvim
+                        end,
                     }
                 end,
-                --]]
             }
         })
     end
