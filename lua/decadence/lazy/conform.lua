@@ -4,9 +4,11 @@ return {
     config = function()
         require("conform").setup({
             formatters_by_ft = {
-                go = { "goimports", "gofumt", "golines", "gomodifytags" },
+                go = { "goimports", "gofumpt"},
                 javascript = { { "prettierd", "prettier" } },
                 java = { "google-java-format" },
+                json = { "jq" },
+                lua = { "stylua" },
             },
             format_on_save = function(bufnr)
                 -- Disable with a global or buffer-local variable
@@ -27,7 +29,7 @@ return {
         })
 
         vim.keymap.set("n", "<leader>f", function()
-            require("conform").format({ async = false })
+            require("conform").format({ async = true })
         end
         )
 
