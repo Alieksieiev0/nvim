@@ -5,9 +5,9 @@ opt.nu = true
 opt.number = true
 opt.relativenumber = true
 
-opt.tabstop = 4
-opt.softtabstop = 4
-opt.shiftwidth = 4
+opt.tabstop = 2
+opt.softtabstop = 2
+opt.shiftwidth = 2
 opt.expandtab = true
 opt.smartindent = true
 
@@ -25,3 +25,4 @@ opt.signcolumn = "yes"
 
 opt.colorcolumn = "80"
 opt.clipboard = "unnamedplus"
+opt.splitright = true

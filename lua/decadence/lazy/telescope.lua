@@ -8,6 +8,7 @@ return {
 		require("telescope").load_extension("projects")
 		require("telescope").load_extension("noice")
 		require("telescope").load_extension("worktrees")
+		require("telescope").load_extension("di")
 		require("telescope").setup({
 			defaults = {
 				file_ignore_patterns = { "node_modules", "*.json" },
@@ -32,6 +33,9 @@ return {
 		end)
 		vim.keymap.set("n", "<leader>nl", function()
 			vim.cmd.Telescope("noice")
+		end)
+		vim.keymap.set("n", "<leader>ds", function()
+			require("telescope").extensions.di.list_structs()
 		end)
 	end,
 }

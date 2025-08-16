@@ -8,4 +8,4 @@ function ApplyColor(color)
 	vim.api.nvim_set_hl(1, "NormalFloat", { bg = "none" })
 end
 
-ApplyColor()
+ApplyColor("tokyonight-night")

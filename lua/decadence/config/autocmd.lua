@@ -1,7 +1,7 @@
 vim.api.nvim_create_autocmd("BufWritePre", {
 	pattern = "*",
 	callback = function()
-		require("lint").try_lint("golangcilint")
+		require("lint").try_lint()
 	end,
 })
 

@@ -4,27 +4,29 @@ return {
 	config = function()
 		require("conform").setup({
 			formatters_by_ft = {
-				go = { "goimports", "gofumpt" },
+				go = { "goimports", "gofumpt", "golines" },
 				c = { "clang-format" },
 				cpp = { "clang-format" },
-				javascript = { { "prettierd", "prettier", stop_after_first = true } },
-				typescript = { { "prettierd", "prettier", stop_after_first = true } },
-				python = { "autopep8" },
-				javascriptreact = { { "prettierd", "prettier", stop_after_first = true } },
-				typescriptreact = { { "prettierd", "prettier", stop_after_first = true } },
+				javascript = { "prettier", stop_after_first = true },
+				typescript = { "prettier", stop_after_first = true },
+				python = { "ruff_fix", "ruff_format", "ruff_organize_imports" },
+				javascriptreact = { "prettier", stop_after_first = true },
+				typescriptreact = { "prettier", stop_after_first = true },
 				terraform = { "terraform_fmt" },
 				hcl = { "terragrunt_hclfmt" },
 				html = { "htmlbeautifier" },
-				svelte = { { "prettierd", "prettier", stop_after_first = true } },
-				css = { "prettierd" },
+				svelte = { "prettier", stop_after_first = true },
+				css = { "prettier" },
 				java = { "google-java-format" },
 				json = { "jq" },
 				lua = { "stylua" },
 				elixir = { "mix" },
+				zig = { "zigfmt" },
+				rust = { "rustfmt", lsp_format = "fallback" },
 			},
 			format_after_save = function(bufnr)
 				-- Disable with a global or buffer-local variable
-				if vim.bo.filetype == "templ" or vim.bo.filetype == "zig" then
+				if vim.bo.filetype == "templ" then
 					return
 				end
 				if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
